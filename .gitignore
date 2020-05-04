@@ -1,0 +1,10 @@
+.idea
+.vs
+
+Hrimsoft.StringCases/bin
+Hrimsoft.StringCases/obj
+
+Hrimsoft.StringCases.Tests/bin
+Hrimsoft.StringCases.Tests/obj
+
+*.DotSettings.user
