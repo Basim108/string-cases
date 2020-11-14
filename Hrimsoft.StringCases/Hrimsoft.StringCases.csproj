@@ -12,7 +12,7 @@
         <PackageVersion>1.0.0</PackageVersion>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <FileVersion>1.0.0</FileVersion>
-        <Company>Himsoft</Company>
+        <Company>Hrimsoft</Company>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Description>String extensions for converting into different cases e.g. snake_case, camelCase, kebab-case, _underscoredCamelCase, Train-Case</Description>
         <PackageReleaseNotes>String extensions for converting into different cases e.g. snake_case, camelCase, kebab-case, _underscoredCamelCase, Train-Case</PackageReleaseNotes>
