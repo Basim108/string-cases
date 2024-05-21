@@ -73,9 +73,13 @@ namespace Hrimsoft.StringCases.Tests
         }
         
         [Fact]
-        public void given_two_capital_letters_into_2_words()
-        {
-            Assert.Equal("a-a", "AA".ToKebabCase());
+        public void given_two_capital_letters_into_one_word() {
+            Assert.Equal("country-nz",     "countryNZ".ToKebabCase());
+            Assert.Equal("nz",             "NZ".ToKebabCase());
+            Assert.Equal("gdpr-is-not-ccpa",   "GDPRisNotCCPA".ToKebabCase());
+            Assert.Equal("gdpr-1-is-not-ccpa", "GDPR1isNotCCPA".ToKebabCase());
+            Assert.Equal("1-is-not-nz",    "1isNotNZ".ToKebabCase());
+            Assert.Equal("1-is-not-2",     "1isNot2".ToKebabCase());
         }
         
         [Fact]

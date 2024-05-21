@@ -31,6 +31,14 @@ PM> Install-Package Hrimsoft.StringCases
 
   var pascalCase = "Some text that    could be any-kind--ofText".ToPascalCase();
   // pascalCase = "SomeTextThatCouldBeAnyKindOfText"
+  
+  var twoCapitalLetters = "countryNZ".ToSnakeCase(); // country_nz
+  twoCapitalLetters = "NZ".ToSnakeCase(); // nz
+  twoCapitalLetters = "GDPRisNotCCPA".ToSnakeCase(); // gdpr_is_not_ccpa
+  
+  var digitIsDilimiter = "GDPR1isNotCCPA".ToSnakeCase(); // gdpr_1_is_not_ccpa
+  digitIsDilimiter = "1isNotCCPA".ToSnakeCase(); // 1_is_not_ccpa
+  digitIsDilimiter = "1isNot2".ToSnakeCase(); // 1_is_not_2
 ```
 
 ## License ##

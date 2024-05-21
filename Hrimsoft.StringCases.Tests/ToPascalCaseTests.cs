@@ -19,8 +19,7 @@ namespace Hrimsoft.StringCases.Tests
         [Fact]
         public void given_null_returns_empty_string()
         {
-            string test = null;
-            Assert.Equal("", test.ToPascalCase());
+            Assert.Equal("", ((string)null).ToPascalCase());
         }
 
         [Fact]
@@ -71,11 +70,15 @@ namespace Hrimsoft.StringCases.Tests
         {
             Assert.Equal("FirstSecond", "_firstSecond".ToPascalCase());
         }
-
+        
         [Fact]
-        public void given_two_capital_letters_into_2_words()
-        {
-            Assert.Equal("AA", "AA".ToPascalCase());
+        public void given_two_capital_letters_into_one_word() {
+            Assert.Equal("CountryNz",  "countryNZ".ToPascalCase());
+            Assert.Equal("Nz",         "NZ".ToPascalCase());
+            Assert.Equal("GdprIsNotCcpa",  "GDPRisNotCCPA".ToPascalCase());
+            Assert.Equal("Gdpr1IsNotCcpa", "GDPR1isNotCCPA".ToPascalCase());
+            Assert.Equal("1IsNotNz",   "1isNotNZ".ToPascalCase());
+            Assert.Equal("1IsNot2",    "1isNot2".ToPascalCase());
         }
         
         [Fact]
