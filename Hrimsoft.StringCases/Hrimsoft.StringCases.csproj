@@ -9,9 +9,9 @@
         <Authors>Basim Al-Jawahery</Authors>
         <PackageProjectUrl>https://github.com/Basim108/string-cases</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Basim108/string-cases</RepositoryUrl>
-        <PackageVersion>1.0.0</PackageVersion>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
+        <PackageVersion>2.0.0</PackageVersion>
+        <AssemblyVersion>2.0.0</AssemblyVersion>
+        <FileVersion>2.0.0</FileVersion>
         <Company>Hrimsoft</Company>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Description>String extensions for converting into different cases e.g. snake_case, camelCase, kebab-case, _underscoredCamelCase, Train-Case</Description>

@@ -2,9 +2,6 @@
 
  namespace Hrimsoft.StringCases
 {
-    /// <summary>
-    /// Extension methods for String type
-    /// </summary>
     public static class StringExtensions
     {
         /// <summary>
@@ -17,9 +14,12 @@
             var parts = new List<string>();
             var lexeme = new List<string>();
 
-            for (var i = 0; i < source.Length; i++)
-            {
-                if (source[i].IsDelimiter() || source[i].IsUpperCase())
+            for (var i = 0; i < source.Length; i++) {
+                var isUpperDelimiter = i > 0 && char.IsUpper(source[i]) && !char.IsUpper(source[i - 1]);
+                var isLowerDelimiter = i > 1 && char.IsLower(source[i]) && char.IsUpper(source[i - 1]) && char.IsUpper(source[i - 2])
+                                        || i > 0 && char.IsLower(source[i]) && char.IsDigit(source[i - 1]);
+                
+                if (source[i].IsDelimiter() || isUpperDelimiter || isLowerDelimiter || char.IsDigit(source[i]))
                 {
                     if (lexeme.Count > 0)
                     {

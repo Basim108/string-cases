@@ -19,8 +19,7 @@ namespace Hrimsoft.StringCases.Tests
         [Fact]
         public void given_null_returns_empty_string()
         {
-            string test = null;
-            Assert.Equal("", test.ToCamelCase());
+            Assert.Equal("", ((string)null).ToCamelCase());
         }
 
         [Fact]
@@ -73,9 +72,13 @@ namespace Hrimsoft.StringCases.Tests
         }
         
         [Fact]
-        public void given_two_capital_letters_into_2_words()
-        {
-            Assert.Equal("aA", "AA".ToCamelCase());
+        public void given_two_capital_letters_into_one_word() {
+            Assert.Equal("countryNz",  "countryNZ".ToCamelCase());
+            Assert.Equal("nz",         "NZ".ToCamelCase());
+            Assert.Equal("gdprIsNotCcpa",  "GDPRisNotCCPA".ToCamelCase());
+            Assert.Equal("gdpr1IsNotCcpa", "GDPR1isNotCCPA".ToCamelCase());
+            Assert.Equal("1IsNotNz",   "1isNotNZ".ToCamelCase());
+            Assert.Equal("1IsNot2",    "1isNot2".ToCamelCase());
         }
         
         [Fact]
