@@ -1,0 +1,51 @@
+version: 2
+
+updates:
+  # NuGet packages across the solution (library + tests)
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "nuget"
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+      include: "scope"
+    groups:
+      # Keep the xunit test stack in lockstep to avoid partial-upgrade breakage
+      xunit:
+        patterns:
+          - "xunit"
+          - "xunit.*"
+      microsoft-test:
+        patterns:
+          - "Microsoft.NET.Test.Sdk"
+      microsoft-extensions:
+        patterns:
+          - "Microsoft.Extensions.*"
+
+  # GitHub Actions used by the CI/CD workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore(ci)"
+      include: "scope"
+    groups:
+      actions:
+        patterns:
+          - "*"
